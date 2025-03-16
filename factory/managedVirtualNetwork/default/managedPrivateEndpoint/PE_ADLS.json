@@ -1,9 +1,10 @@
 {
     "name": "PE_ADLS",
     "properties": {
-      "privateLinkResourceId": "/subscriptions/dba4f5a9-56f1-4191-8e2f-ed1bfdc31cfd/resourceGroups/rg-adf-dev/providers/Microsoft.Storage/storageAccounts/adlstemidev001/blobServices/default",
+      "privateLinkResourceId": "/subscriptions/dba4f5a9-56f1-4191-8e2f-ed1bfdc31cfd/resourceGroups/rg-adf-dev/providers/Microsoft.Storage/storageAccounts/adlstemidev001",
       "groupId": "dfs",
       "fqdns": ["adlstemidev001.dfs.core.windows.net"]
     }
   }
+  
   
