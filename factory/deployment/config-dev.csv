@@ -1,0 +1,14 @@
+type,name,path,value
+# Azure Managed IR Configuration
+integrationRuntime,AzureManagedIR,properties.location,"East US"
+integrationRuntime,AzureManagedIR,properties.computeProperties.computeType,"General"
+integrationRuntime,AzureManagedIR,properties.computeProperties.coreCount,8
+integrationRuntime,AzureManagedIR,properties.computeProperties.timeToLive,60
+
+# Linked Services Configuration
+linkedService,LS_AzureKeyVault,typeProperties.baseUrl,"https://keyvault-temi-dev.vault.azure.net/"
+linkedService,LS_ADLS,typeProperties.baseUrl,"https://adlstemidev001.dfs.core.windows.net/"
+
+# Managed Private Endpoints
+managedPrivateEndpoint,PE_KeyVault,properties.fqdn,"keyvault-temi-dev.vault.azure.net"
+managedPrivateEndpoint,PE_ADLS,properties.fqdn,"adlstemidev001.dfs.core.windows.net"

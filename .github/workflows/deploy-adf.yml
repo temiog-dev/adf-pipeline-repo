@@ -1,0 +1,46 @@
+name: Deploy ADF Pipeline
+
+on:
+  push:
+    branches:
+      - main  # Trigger on push to the main branch
+  workflow_dispatch:  # Allow manual triggering
+    inputs:
+      environment:
+        description: 'Deployment environment (sandbox, dev, prod)'
+        required: true
+        default: 'dev'
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment: ${{ inputs.environment }}  # Default to dev if not manually set
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Log in to Azure
+        uses: azure/login@v1
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+          enable-AzPSSession: true
+
+      - name: Install Azure Modules
+        uses: azure/powershell@v2
+        with:
+          azPSVersion: "latest"
+          inlineScript: |
+            Install-Module -Name Az -Scope CurrentUser -Force
+            Install-Module -Name azure.datafactory.tools -Scope CurrentUser -Force
+
+      - name: Deploy ADF
+        uses: azure/powershell@v2
+        with:
+          azPSVersion: "latest"
+          inlineScript: |
+            Publish-AdfV2FromJson `
+              -RootFolder "factory/" `
+              -ResourceGroupName "${{ vars.RESOURCE_GROUP_NAME }}" `
+              -DataFactoryName "${{ vars.DATA_FACTORY_NAME }}" `
+              -Location "EastUS" `
+              -Stage "${{ inputs.environment }}"
