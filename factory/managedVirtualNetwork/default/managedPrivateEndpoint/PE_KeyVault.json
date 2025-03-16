@@ -1,0 +1,11 @@
+{
+    "name": "PE_KeyVault",
+    "properties": {
+      "privateLinkResourceId": "/subscriptions/dba4f5a9-56f1-4191-8e2f-ed1bfdc31cfd/resourceGroups/rg-adf-dev/providers/Microsoft.KeyVault/vaults/keyvault-temi-dev",
+      "groupId": "vault",
+      "fqdns": ["keyvault-temi-dev.vault.azure.net"]
+    }
+  }
+  
+  
+  

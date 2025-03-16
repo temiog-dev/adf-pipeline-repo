@@ -3,7 +3,7 @@ type,name,path,value
 integrationRuntime,AzureManagedIR,properties.location,"East US"
 integrationRuntime,AzureManagedIR,properties.computeProperties.computeType,"General"
 integrationRuntime,AzureManagedIR,properties.computeProperties.coreCount,8
-integrationRuntime,AzureManagedIR,properties.computeProperties.timeToLive,60
+integrationRuntime,AzureManagedIR,properties.computeProperties.timeToLive,10
 
 # Linked Services Configuration
 linkedService,LS_AzureKeyVault,typeProperties.baseUrl,"https://keyvault-temi-dev.vault.azure.net/"

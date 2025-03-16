@@ -1,0 +1,10 @@
+{
+    "name": "LS_AzureKeyVault",
+    "properties": {
+      "type": "AzureKeyVault",
+      "typeProperties": {
+        "baseUrl": "https://keyvault-temi-dev.vault.azure.net/"
+      }
+    }
+  }
+  
