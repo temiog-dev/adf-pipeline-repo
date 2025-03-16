@@ -14,7 +14,7 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    environment: ${{ inputs.environment }}  # Default to dev if not manually set
+    environment: dev  # Default to dev if not manually set
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
